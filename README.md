@@ -22,5 +22,6 @@ Note: in modules left of config in polybar i put bspwm module, cause i am curent
 installation
 1. git clone https://github.com/eri-purniawan/Polybar-theme.git
 2. cp -r polybar-theme/* ~/.config/polybar
+3. restart your WM
 
 have a nice day
