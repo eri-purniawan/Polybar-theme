@@ -20,6 +20,7 @@ Dependencies
 Note: in modules left of config in polybar i put bspwm module, cause i am curently using it. you can replace with i3 or workspace module, acordingly to the documentation of polybar.
 
 installation
-clone this repository, and put into your polybar configuration, then restart your WM
+1. git clone https://github.com/eri-purniawan/Polybar-theme.git
+2. cp -r polybar-theme/* ~/.config/polybar
 
 have a nice day
