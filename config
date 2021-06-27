@@ -23,12 +23,13 @@ background3 = #263238
 foreground = #eceff4
 foreground-alt = #4c566a
 
+underline = #7EA497
 red = #EE7674
 yellow = #ebcb8b
-green = #38d9a9
+green = #008080
 workspaces = #5e81ac
-blue = #4dabf7
-pink = #9775fa
+blue = #22515F
+pink = #41717B
 
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1}
@@ -40,10 +41,10 @@ radius = 0.0
 fixed-center = false
 
 background = ${colors.background3}
-foreground = ${colors.background3}
+foreground = ${colors.foreground}
 
-;line-size = 3
-;line-color = #f00
+line-size = 2
+line-color = ${colors.pink}
 
 ;border-bottom-size = 2
 ;border-size = 1
@@ -62,11 +63,12 @@ font-1 = M+ 2p:style=regular:pixelsize=11;2
 font-2 = Font Awesome 5 Free Solid:pixelsize=11;2
 font-3 = Font Awesome 5 Free:pixelsize=11;2
 font-4 = Font Awesome 5 Brands:pixelsize=11;2
-font-5 = mononoki Nerd Font:style=Regular:pixelsize=11;2
+font-5 = mononoki Nerd Font:style=Regular:pixelsize=17;4
+;font-5 = Iosevka Nerd Font:style=Regular:pixelsize=17;4
 
 modules-left = bspwm sep0 xwindow
 modules-center = 
-modules-right = sep4 spotify sep spotify-prev sep spotify-play-pause sep spotify-next sep3 updates sep2 alsa sep1 filesystem sep2 memory sep1 cpu sep2 date sep5
+modules-right = sep4 spotify sep spotify-prev sep spotify-play-pause sep spotify-next sep3 updates sep2 alsa sep1 filesystem sep2 memory sep1 cpu sep2 date
 
 tray-position = right
 tray-padding = 2
@@ -90,9 +92,9 @@ cursor-scroll = ns-resize
 
 [module/sep0]
 type = custom/text
-content = " |"
+content = " | "
 content-background = ${colors.background3}
-content-foreground = ${colors.foreground-alt}
+content-foreground = ${colors.blue}
 
 [module/sep]
 type = custom/text
@@ -123,12 +125,6 @@ content = ""
 content-foreground = ${colors.green}
 content-background = ${colors.background3}
 
-[module/sep5]
-type = custom/text
-content = ""
-content-background = ${colors.pink}
-content-foreground = ${colors.blue}
-
 [module/sep6]
 type = custom/text
 content = " "
@@ -142,13 +138,16 @@ format = <label>
 format-prefix = ""
 format-prefix-foreground = ${colors.foreground}
 format-prefix-padding = 1
+format-prefix-underline = ${colors.underline}
 
-label = "%title%"
+label = "%title% "
 label-maxlen = 30
 label-foreground = ${colors.foreground}
+label-underline = ${colors.underline}
 
-label-empty = "Desktop [Archlinux]"
+label-empty = "Desktop [Archlinux] "
 label-empty-foreground = ${colors.foreground}
+label-empty-underline = ${colors.underline}
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -216,19 +215,22 @@ ws-icon-1 = II;
 ws-icon-2 = III;
 ws-icon-3 = IV;
 ws-icon-4 = V;
+ws-icon-5 = VI;
 
 format = <label-state> <label-mode>
 format-foreground = ${colors.yellow}
 
 label-focused = %icon%
 label-focused-background = ${colors.background3}
-label-focused-foreground = ${colors.pink}
+label-focused-foreground = ${colors.underline}
 label-focused-padding = 1
+label-focused-underline = ${colors.underline}
 
 label-occupied = %icon%
 label-occupied-padding = 1
 label-occupied-background = ${colors.background3}
-label-occupied-foreground = #74c0fc
+label-occupied-foreground = ${colors.blue}
+;label-occupied-underline = ${colors.blue}
 
 label-urgent = %icon%!
 label-urgent-background = ${colors.background}
@@ -645,5 +647,11 @@ click-right = exo-open --launch TerminalEmulator &
 ; "scroll-(up|down)" will be executed using "/usr/bin/env sh -c [command]"
 ;scroll-up = echo scroll up %counter%
 ;scroll-down = echo scroll down %counter%
+
+[module/linux]
+type = custom/text
+content = " "
+content-background = ${colors.background3}
+content-foreground = ${colors.pink}
 
 ; vim:ft=dosini
